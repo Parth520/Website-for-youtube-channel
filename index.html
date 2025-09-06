@@ -319,75 +319,13 @@
         }
 
 
-       /* Glass Events Container */
-.events-glass-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
+       /* Fix carousel image dimensions */
+.carousel-img {
+  height: 500px;       /* fixed height for all slides */
+  object-fit: cover;   /* crops and fills image properly */
+  border-radius: 10px; /* optional: rounded edges */
 }
 
-/* Glass Event Card */
-.events-glass-container .glass {
-  position: relative;
-  width: 250px;
-  height: 280px;
-  background: linear-gradient(#fff2, transparent);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  transition: 0.5s;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-  text-decoration: none;
-}
-
-/* Event Image */
-.events-glass-container .glass img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  transition: transform 0.5s ease;
-  border-radius: 15px;
-}
-
-/* Hover Zoom Effect */
-.events-glass-container .glass:hover img {
-  transform: scale(1.1);
-}
-
-/* Event Title Bar */
-.events-glass-container .glass .event-title {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-align: center;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  backdrop-filter: blur(5px);
-  transition: 0.3s ease;
-}
-
-/* On Hover, brighten the title */
-.events-glass-container .glass:hover .event-title {
-  background: rgba(0, 0, 0, 0.8);
-  color: #1F51FF;
-}
 
 
 
@@ -468,29 +406,46 @@
   <div class="container">
     <h2 class="fw-bold mb-5 animated-gradient">✨ Latest Events</h2>
 
-    <div class="events-glass-container">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
 
-      <!-- Event 1 -->
-      <a href="https://youtu.be/ZFQqK9SuqH8?si=if7yPHJMQByGKBow" target="_blank" class="glass">
-        <img src="./images/event 1.jpg" alt="Event 1">
-        <div class="event-title">🎬 The Vigilante Teaser Released</div>
-      </a>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="https://youtu.be/6iarB3nlYys"><img src="./images/event 1.jpg" class="d-block w-100 carousel-img" alt="Event 1"></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>The Vigilante Teaser</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href="https://youtu.be/G7vKngMsS-E"><img src="./images/event 2.jpg" class="d-block w-100 carousel-img" alt="Event 2"></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Yuvraj 2 Trailer Showcase</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href="https://youtu.be/EeK0vg-uPxc"><img src="./images/event 3.jpg" class="d-block w-100 carousel-img" alt="Event 3"></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>The Vigilante (Announcement)</h5>
+          </div>
+        </div>
+      </div>
 
-      <!-- Event 2 -->
-      <a href="https://example.com/event2" target="_blank" class="glass">
-        <img src="./images/event 2.jpg" alt="Event 2">
-        <div class="event-title">🔥 I was bored so I made a trailer of Yuvraj 2 | Hukum Reloaded</div>
-      </a>
-
-      <!-- Event 3 -->
-      <a href="https://youtu.be/EeK0vg-uPxc?si=W6zRTDO1ZFTkH0bJ" target="_blank" class="glass">
-        <img src="./images/event 3.jpg" alt="Event 3">
-        <div class="event-title">📢 The Vigilante (Announcement)</div>
-      </a>
-
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
 </section>
+
 
 
 
@@ -802,4 +757,5 @@
 </body>
 
 </html>
+
 
