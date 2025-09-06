@@ -317,6 +317,70 @@
             color: #4a6cff;
             text-shadow: 0 0 15px #1f51ff, 0 0 30px #4a6cff;
         }
+
+
+        /* Events Section */
+#events {
+  background: rgba(10, 10, 15, 0.8);
+  border-top: 1px solid rgba(74, 108, 255, 0.3);
+  border-bottom: 1px solid rgba(74, 108, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.events-slider {
+  display: flex;
+  width: max-content;
+  animation: scrollEvents 25s linear infinite;
+}
+
+.events-slider:hover {
+  animation-play-state: paused; /* pause on hover */
+}
+
+.event-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 260px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.event-card img {
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(74, 108, 255, 0.5);
+}
+
+.event-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(31, 81, 255, 0.8);
+}
+
+.event-title {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 15, 0.7);
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.event-card:hover .event-title {
+  background: rgba(74, 108, 255, 0.9);
+  box-shadow: 0 0 15px #1f51ff;
+}
+
+/* Infinite scrolling animation */
+@keyframes scrollEvents {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
     </style>
 </head>
 
@@ -331,8 +395,8 @@
             <li><a href="#" class="nav-link px-3">Home</a></li>
             <li><a href="#about" class="nav-link px-3">About us</a></li>
             <li><a href="#projects" class="nav-link px-3">Project</a></li>
-            <li><a href="#" class="nav-link px-3">Packages</a></li>
-            <li><a href="#about" class="nav-link px-3">Contact</a></li>
+            <li><a href="#order" class="nav-link px-3">Packages</a></li>
+            <li><a href="#contact" class="nav-link px-3">Contact</a></li>
         </ul>
     </header>
 
@@ -386,6 +450,36 @@
             </div>
         </div>
     </section>
+
+    <section id="events" class="py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-5 animated-gradient">✨ Latest Events</h2>
+
+    <div class="events-slider d-flex">
+      <!-- Event 1 -->
+      <a href="https://youtu.be/ZFQqK9SuqH8?si=if7yPHJMQByGKBow" target="_blank" class="event-card mx-3">
+        <img src="./images/event 1.jpg" alt="Event 1" class="img-fluid rounded shadow-lg">
+        <div class="event-title">The Vigilante Teaser  released</div>
+      </a>
+
+      <!-- Event 2 -->
+      <a href="https://example.com/event2" target="_blank" class="event-card mx-3">
+        <img src="./images/event 2.jpg" alt="Event 2" class="img-fluid rounded shadow-lg">
+        <div class="event-title">I was bored so I made a trailer of Yuvraj 2 |hukum reloaded
+</div>
+      </a>
+
+      <!-- Event 3 -->
+      <a href="https://youtu.be/EeK0vg-uPxc?si=W6zRTDO1ZFTkH0bJ" target="_blank" class="event-card mx-3">
+        <img src="./images/event 3.jpg" alt="Event 3" class="img-fluid rounded shadow-lg">
+        <div class="event-title">The Vigilante (Announcement)</div>
+      </a>
+
+      <!-- Event 4 -->
+      
+    </div>
+  </div>
+</section>
 
     <!-- Projects Section -->
     <section class="py-5">
@@ -495,7 +589,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content contact-form p-4">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title">Order Selection</h5>
+                    <h5 class="modal-title">Complete Your Order</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -693,6 +787,5 @@
     </script>
 
 </body>
-
 
 </html>
